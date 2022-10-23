@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jane's portfolio</title>
+    <script src="./script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
@@ -15,12 +16,14 @@
 <body>
     <div class="hero-section">
         <nav class="navbar">
-            <div><a href="#home">Home</a></div>
-            <div><a href="#about">About</a></div> 
-            <div><a href="#skills">Skills </a></div>
-            <div><a href="#home">Contact Me</a></div>
-            <div><a href="#projects">Projects</a></div>
-            <span class="hambuger-menu">
+            <div id="navlist">
+            <div class="navbarcontent"><a href="#home">Home</a></div>
+            <div class="navbarcontent"><a href="#about">About</a></div> 
+            <div class="navbarcontent"><a href="#skills">Skills </a></div>
+            <div class="navbarcontent"><a href="#contact">Contact </a></div>
+            <div class="navbarcontent"><a href="#projects">Projects</a></div>
+            </div>
+            <span class="hambuger-menu" id="toggle-nav" onclick="toggleNav()">
                 <i class="fa-solid fa-bars"></i>
             </span>
         </nav>
@@ -54,7 +57,7 @@
     <section id="about">
     <div class="about">
         <div class="about_img ">
-            <img src="images/me1.jpg" alt="">
+            <img src="images/me1.jpg" alt="my image">
         </div>
         <div class="about_text">
             <p> About Me</p>
@@ -64,10 +67,10 @@
                 <br></span>
             <div class="buttons">
                 <div class="buttons_hire-me">
-                    <a href=""> Hire me </a>
+                    <a href="mailto:jane66861@gmail.com"> Hire me </a>
                 </div>
                 <div class="buttons_hire-me">
-                    <a href=""> Download CV </a>
+                    <a href="/Jane CV.docx"> Download CV </a>
                 </div>
             </div>
         </div>
@@ -80,23 +83,23 @@
 
         <div class="service_box">
             <div>
-                <img src="images/html.png" style="height:80px;width:80px;" alt="html logo">
+                <img class="service_box_images" src="images/html.png" alt="html logo">
                 <h4>HTML</h4>
             </div>
          </div>
          <div class="service_box">
             <div>
-            <img src="images/css.png" style="height:80px;width:80px;" alt="CSS logo">
+            <img class="service_box_images" src="images/css.png" alt="CSS logo">
             <h4>CSS</h4>
         </div></div>
         <div class="service_box">
         <div>
-            <img src="images/javascript.png" style="height:80px;width:80px;" alt="javascript logo">
+            <img class="service_box_images" src="images/javascript.png" alt="javascript logo">
             <h4>JS</h4>
         </div></div>
         <div class="service_box">
         <div>
-            <img src="images/bs5.png" style="height:80px;width:80px;" alt="bootstrap logo">
+            <img class="service_box_images" src="images/bs5.png" alt="bootstrap logo">
             <h4>bootstrap</h4>
         </div>
     </div>
@@ -113,7 +116,7 @@
     <div class="services_heading">Projects</div>
       <div class="projects">
         <div  class="project-example">
-           <img src="images/terrarium.PNG" alt="    "> 
+           <img src="images/terrarium.PNG" alt="terrarium image"> 
            <div class="project-text">
             <p class="project-name"> Terrarium </p>
             <p class="project-description "> A virtual terrarium with draggable plants.</p>
@@ -122,7 +125,7 @@
 
         </div>
         <div class="project-example">
-            <img src="images/memorygame.PNG" alt="    ">
+            <img src="images/memorygame.PNG" alt="memory card game home page image">
             <div class="project-text">
                 <p class="project-name"> Memory Card Game </p>
                 <p class="project-description "> A fun game of flipping and matching cards.</p>
@@ -131,25 +134,46 @@
 
         </div>
         <div class="project-example">
-            <img src="images/typinggame.PNG" alt="    ">
+            <img src="images/typinggame.PNG" alt="typing game home page">
             <div class="project-text">
                 <p class="project-name"> Typing Game</p>
                 <p class="project-description ">A typing game which tests accuracy and speed in typing.</p>
-                <p class="project-link"> <a href=""> learn more </a>  </p>
+                <p class="project-link"> <a href="https://jayne58.github.io/typing-game/"> learn more </a>  </p>
             </div> 
 
         </div>
         <div class="project-example">
-            <img src="images/studio.PNG" alt="    ">
+            <img src="images/studio.PNG" alt="makeup studio home page">
             <div class="project-text">
                 <p class="project-name"> Make up Studio  </p>
                 <p class="project-description "></p>
-                <p class="project-link"> <a href=""> learn more </a>  </p>
+                <p class="project-link"> <a href="https://jayne58.github.io/make-up-studio/"> learn more </a>  </p>
             </div> 
 
         </div>
         
       </div>
+    </section>
+
+      <section id="contact">
+        <form id="fs-frm" class="contact-form" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xgeqlbjq" method="post">
+            
+            <fieldset id="fs-frm-inputs">
+                <h3 style="font-size:30px ;">Contact form</h3><br>
+              <label for="full-name">Full Name</label><br>
+              <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+              <label for="email-address">Email Address</label>
+              <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+              <label for="message">Message</label>
+              <textarea rows="5" name="message" id="message" placeholder="" required=""></textarea>
+              <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+            
+            <input type="submit" value="Submit">
+        </fieldset>
+          </form>
+          
+</section>
+    </section>
       <div class="footer">
     <div class="icons">
         <span>
@@ -169,7 +193,7 @@
 
 </div>
       
-</section>
+
 
 </body>
 </html>
