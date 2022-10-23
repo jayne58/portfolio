@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jane's portfolio</title>
+    <script src="./script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
@@ -15,12 +16,14 @@
 <body>
     <div class="hero-section">
         <nav class="navbar">
-            <div><a href="#home">Home</a></div>
-            <div><a href="#about">About</a></div> 
-            <div><a href="#skills">Skills </a></div>
-            <div><a href="#home">Contact Me</a></div>
-            <div><a href="#projects">Projects</a></div>
-            <span class="hambuger-menu">
+            <div id="navlist">
+            <div class="navbarcontent"><a href="#home">Home</a></div>
+            <div class="navbarcontent"><a href="#about">About</a></div> 
+            <div class="navbarcontent"><a href="#skills">Skills </a></div>
+            <div class="navbarcontent"><a href="#contact">Contact </a></div>
+            <div class="navbarcontent"><a href="#projects">Projects</a></div>
+            </div>
+            <span class="hambuger-menu" id="toggle-nav" onclick="toggleNav()">
                 <i class="fa-solid fa-bars"></i>
             </span>
         </nav>
@@ -150,6 +153,27 @@
         </div>
         
       </div>
+    </section>
+
+      <section id="contact">
+        <form id="fs-frm" class="contact-form" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xgeqlbjq" method="post">
+            
+            <fieldset id="fs-frm-inputs">
+                <h3 style="font-size:30px ;">Contact form</h3><br>
+              <label for="full-name">Full Name</label><br>
+              <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+              <label for="email-address">Email Address</label>
+              <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+              <label for="message">Message</label>
+              <textarea rows="5" name="message" id="message" placeholder="" required=""></textarea>
+              <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+            
+            <input type="submit" value="Submit">
+        </fieldset>
+          </form>
+          
+</section>
+    </section>
       <div class="footer">
     <div class="icons">
         <span>
@@ -169,7 +193,7 @@
 
 </div>
       
-</section>
+
 
 </body>
 </html>
