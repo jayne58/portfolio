@@ -1,8 +1,8 @@
 var nav = document.getElementById('navlist');
 
-    function toggleNav() {       
+    function toggleNav () {       
 
-        if ( nav.style.display == "" )
+        if ( nav.style.display === "" )
         nav.style.display = "block";
 
         else
@@ -16,3 +16,4 @@ var nav = document.getElementById('navlist');
     }
 
     window.addEventListener("resize", windowResizeHandler);
+

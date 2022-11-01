@@ -143,9 +143,12 @@ section {
   .navbar {
     padding: 20px 20px;
   }
+  .navbar {
+    padding: 1.6em;
+}
 
 #navlist {
-    /* opacity: 0.5 !important; */
+    display: none;
 }
 
 #toggle-nav {
@@ -269,7 +272,7 @@ body{
   line-height: 20px;
 }
 .footer {
-  padding: 20px 100px;
+  padding: 0px 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -324,8 +327,6 @@ body{
   background-color: rgb(219, 216, 216) ;
   width: 40%;
   margin-left: 50px;
-  
-
 }
 .project-description {
   padding-left: 10px;
@@ -338,7 +339,7 @@ color: black;
 input[type=text]{
   width: 100%;
   padding: 12px 20px;
-  margin: 15px 0;
+  margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -347,7 +348,7 @@ input[type=text]{
 input[type=email]{
   width: 100%;
   padding: 12px 20px;
-  margin: 15px 0;
+  margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -356,7 +357,7 @@ input[type=email]{
 textarea{
     width: 100%;
     padding: 12px 20px;
-    margin: 10px 0;
+    margin: px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
