@@ -1,18 +1,17 @@
-var nav = document.getElementById('navlist');
 
-    function toggleNav() {       
-
-        if ( nav.style.display == "" )
-        nav.style.display = "block";
-
-        else
-        nav.style.display = "";
+    const toggleSlide = () => {
+        const hambugerMenu = document.querySelector('.hambuger-menu')
+        const mobileNav = document.querySelector('.navlinks')
+        
+        hambugerMenu.addEventListener('click' , ()=>{
+            mobileNav.classList.toggle('nav-active')
+            console.log("i was clicked")
+            
+        })
     }
+    toggleSlide()
 
-
-    function windowResizeHandler () {
-        if ( screen.width > 500 )
-        nav.style.display = "";
-    }
-
-    window.addEventListener("resize", windowResizeHandler);
+    window.addEventListener("scroll",() => {
+       const navbar =  document.querySelector('.navbar')
+        navbar.classList.toggle('sticky',window.scrollY > 0);
+    })

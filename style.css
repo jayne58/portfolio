@@ -1,20 +1,27 @@
 * {
   font-family: sans-serif;
   margin: 0px;
-  
+  box-sizing: border-box;
 }
 
 .navbar {
   position: fixed;
   top: 0;
   display: flex;
-  justify-content: left;
-  margin-left: 400px;
+  justify-content: center;
+  /* margin-left: 400px; */
   gap: 20px;
   font-size: 20px;
+  width: 100%;
+  height: 10vh;
+  z-index: 1;
+}
+.sticky { 
+    background: rgb(122, 79, 64) !important;
+ 
 }
 
-.navbarcontent{
+.navbarcontent {
   margin: 20px;
   padding-left: 20px;
   padding-right: 20px;
@@ -24,14 +31,7 @@
 .navbarcontent:hover {
   border-bottom: 3px solid #fff;
 }
-.navbar span {
-  margin: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  transition: 0.2s ease;
-  display: none;
-  position: absolute;
-}
+
 /* .navbar a {
   color: rgb(0, 0, 0);
   text-decoration: none;
@@ -103,18 +103,17 @@ section {
   transition: 0.5s ease;
 }
 
- .buttons_hire-me+div {
-    padding: 10px 35px;
-     background-color: rgb(94, 31, 209); 
-    color: rgb(0,0,0);
-    border-radius: 25px;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
-    transition: 0.5s ease;
-} 
+.buttons_hire-me + div {
+  padding: 10px 35px;
+  background-color: rgb(94, 31, 209);
+  color: rgb(0, 0, 0);
+  border-radius: 25px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease;
+}
 
-.buttons_hire-me+div a {
-    color: rgb(252, 252, 252);
- 
+.buttons_hire-me + div a {
+  color: rgb(252, 252, 252);
 }
 
 .buttons_hire-me:hover,
@@ -126,29 +125,47 @@ section {
   text-decoration: none;
 }
 section {
-  height:100%
+  height: 100%;
 }
-#toggle-nav {
+/* #toggle-nav {
   display: none;
   margin: auto;
   cursor: pointer;
-}
+} */
+
 
 @media (max-width: 768px) {
-
+    .nav-active {
+    transform: translateX(0%) !important;
+    transition: all 0.5s ease;
+  }   
+body{
+  overflow-x: hidden;
+}
   .navbar {
-                padding: 1.6em;
-            }
+    justify-content: end;
+    align-items: center;
+  }
+ .hambuger-menu {
 
-            #navlist {
-                flex-direction: column;
-                display: none;
-            }
+  display:block !important;
+  padding: 10px;
 
-            #toggle-nav {
-                display: block;
-                color: white;
-            }
+ }
+
+ .navlinks {
+  position: absolute;
+  display: flex;
+  flex-direction: column; 
+  align-items: center !important;
+  top:10vh;
+  height: 90vh;
+  transform: translateX(120%);
+  background-color: rgb(122, 79, 64);
+  width: 50%;
+  transition: all 0.5s ease;
+
+ }
   .hero-text {
     font-size: 30px;
     width: 60%;
@@ -174,7 +191,7 @@ section {
     display: block !important;
   }
   .project-example {
-    width:100% !important;
+    width: 100% !important;
     padding-bottom: 20px;
     height: 100%;
   }
@@ -182,8 +199,6 @@ section {
     display: flex !important;
     flex-direction: column !important ;
   }
-
-
 }
 
 .about {
@@ -223,7 +238,7 @@ section {
   font-weight: bold;
   background-color: rgb(219, 216, 216);
 }
-body{
+body {
   background-color: rgb(219, 216, 216);
 }
 
@@ -242,7 +257,7 @@ body{
   /* color: black; */
   transition: all 0.5s ease;
 }
-.service_box_images{
+.service_box_images {
   width: 80px;
   height: 80px;
 }
@@ -273,7 +288,7 @@ body{
   flex-direction: column;
   background-color: rgb(219, 216, 216);
 }
-.last-section{
+.last-section {
   position: relative;
   height: 100%;
   display: flex;
@@ -281,8 +296,8 @@ body{
 }
 .footer .icons i {
   font-size: 30px;
-  padding-left: 20px;;
-  color: rgb(94, 31, 209); 
+  padding-left: 20px;
+  color: rgb(94, 31, 209);
   transition: all 0.5s ease;
 }
 
@@ -305,7 +320,6 @@ body{
   overflow: hidden;
   background-color: white;
   margin-bottom: 20px;
- 
 }
 .projects > div img {
   width: 100%;
@@ -315,14 +329,11 @@ body{
   padding: 10px 10px;
   font-weight: 600;
   font-size: small;
-  
 }
-.contact-form{
-  background-color: rgb(219, 216, 216) ;
+.contact-form {
+  background-color: rgb(219, 216, 216);
   width: 40%;
   margin-left: 50px;
-  
-
 }
 .project-description {
   padding-left: 10px;
@@ -330,9 +341,9 @@ body{
   padding-bottom: 20px;
 }
 .project-text {
-color: black;
+  color: black;
 }
-input[type=text]{
+input[type="text"] {
   width: 100%;
   padding: 12px 20px;
   margin: 15px 0;
@@ -341,7 +352,7 @@ input[type=text]{
   border-radius: 4px;
   box-sizing: border-box;
 }
-input[type=email]{
+input[type="email"] {
   width: 100%;
   padding: 12px 20px;
   margin: 15px 0;
@@ -350,20 +361,18 @@ input[type=email]{
   border-radius: 4px;
   box-sizing: border-box;
 }
-textarea{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 10px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  
-  
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
-input[type=submit] {
+input[type="submit"] {
   width: 30%;
-  background-color:rgb(122,79,64);
+  background-color: rgb(122, 79, 64);
   color: black;
   padding: 14px 20px;
   margin: 8px 100px;
@@ -375,15 +384,33 @@ input[type=submit] {
   text-decoration: underline;
   padding-left: 10px;
   font-weight: bold;
-  color: rgb(122,79,64); 
+  color: rgb(122, 79, 64);
 }
-.projects a:hover{
-  color: blue; 
+.projects a:hover {
+  color: blue;
 }
-#navlist {
-  list-style: none;
+
+.navbar ul{
   display: flex;
-  padding: 0;
-  margin: 0;
-  background: rgb(122,79,64);
+  justify-content: space-evenly;
+  align-items: center;
+  width: 70%;
+
+
+}
+.navbar li {
+ list-style: none;
+
+}
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
+.hambuger-menu {
+  color: white;
+  display: block;
+  display: flex;
+  align-items: center;
+  display: none;
+
 }
