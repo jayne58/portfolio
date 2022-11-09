@@ -212,6 +212,26 @@ body{
     display: flex !important;
     flex-direction: column !important ;
   }
+  .services  {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .service_box:last-child {
+
+    transform: translateX(45px);
+  }
+  .service_box:last-child h4 {
+    transform: translateX(-40px);
+    padding-top: 10px;
+  }
+  .service_box svg {
+    transform: scale(3.5);
+    padding: 25px 0px;
+  }
+  .services {
+    transform: translateX(-20px);
+
+  }
 }
 
 .about {
@@ -257,14 +277,15 @@ body {
 
 .services {
   display: flex;
-  background-color: rgb(219, 216, 216);
   padding: 20px;
   justify-content: center;
+  background-color: rgb(219, 216, 216);
+  align-items: center;
 }
 
 .service_box {
   width: 10%;
-  padding: 20px;
+    padding: 20px 0px;
   /* margin: 20px; */
   background-color: rgb(219, 216, 216);
   /* color: black; */
@@ -273,7 +294,9 @@ body {
 .service_box_images {
   width: 80px;
   height: 80px;
+  /* padding-bottom: 10px; */
 }
+
 
 .service_box:hover {
   transform: scale(1.1);
